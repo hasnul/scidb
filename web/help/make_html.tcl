@@ -73,15 +73,15 @@ while {[gets $src line] >= 0} {
 		}
 	} elseif {[string match *<body>* $line]} {
 		puts $dst $line
-		puts $dst "<div id='wrapper'>"
-		backlinks header
-		puts $dst "<div id='contentarea'>"
-		puts $dst "<div class='block'>"
+		puts $dst "<div id='wrapper_0815'>"
+		backlinks header_0815
+		puts $dst "<div id='contentarea_0815'>"
+		puts $dst "<div class='block_0815'>"
 	} elseif {[string match *</body>* $line]} {
-		puts $dst "</div><!-- block -->"
-		puts $dst "</div><!-- contentarea -->"
-		backlinks footer
-		puts $dst "</div><!-- wrapper -->"
+		puts $dst "</div><!-- block_0815 -->"
+		puts $dst "</div><!-- contentarea_0815 -->"
+		backlinks footer_0815
+		puts $dst "</div><!-- wrapper_0815 -->"
 		puts $dst $line
 	} else {
 		puts $dst $line
