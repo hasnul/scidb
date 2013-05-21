@@ -52,7 +52,7 @@ proc backlinks {divid} {
 
 	if {[string match *de $home]} {
 		set backToHome [enc "Zurück zur Homepage"]
-		set backToIndex [enc "Zurück zum Hilfe-Übersicht"]
+		set backToIndex [enc "Zurück zur Hilfe-Übersicht"]
 	} else {
 		set backToHome "Back to home page"
 		set backToIndex "Back to help overview"
