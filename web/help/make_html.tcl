@@ -71,7 +71,7 @@ proc backlinks {divid} {
 }
 
 
-set expr {\|(::)?([a-zA-Z_]+::)*[a-zA-Z_]+(\([a-zA-Z_:-]*\))?\|.+\|}
+set expr {\|(::)?([a-zA-Z_]+::)*[a-zA-Z_]+(\([a-zA-Z_:-]*\))?\|[^|]+\|}
 
 while {[gets $src line] >= 0} {
 	if {[string match "<!-- begin: exclude in web browser -->" $line]} {
