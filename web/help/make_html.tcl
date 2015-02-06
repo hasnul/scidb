@@ -74,7 +74,12 @@ proc backlinks {divid} {
 set expr {\|(::)?([a-zA-Z_]+::)*[a-zA-Z_]+(\([a-zA-Z_:-]*\))?\|[^|]+\|}
 
 while {[gets $src line] >= 0} {
-	if {[string match "<!-- begin: exclude in web browser -->" $line]} {
+	if {[string match {*<link rel=\"stylesheet\"*} $line]} {
+		puts $dst "  <link rel='stylesheet'"
+		puts $dst "       type='text/css'"
+		puts $dst "        href='http://fonts.googleapis.com/css?family=Abel' />"
+		puts $dst "  <link rel='stylesheet'"
+	} elseif {[string match "<!-- begin: exclude in web browser -->" $line]} {
 		while {[gets $src line] >= 0 && ![string match "<!-- end: exclude in web browser -->" $line]} {
 		}
 	} elseif {[string match *<body>* $line]} {
